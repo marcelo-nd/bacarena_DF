@@ -61,22 +61,21 @@ sim <- BacArena::simEnv(arena, time=15)
 
 save.image("completo.Rdata")
 
+
 # p <- plotGrowthCurve(simlist)
 # p[[2]]
 
 # p <- plotSubCurve(simlist)
 # p[[3]]
 
-# p <- plotSubCurve(simlist, mediac = c("EX_glc_D__40__e__41__", "EX_h__40__e__41__"))
+# p <- plotSubCurve(simlist, mediac = c("EX_glc_D__40__e__41__", "EX_h2__40__e__41__"))
 # p[[3]]
 
-# p <- plotAbundance(simList)
+# plotAbundance(simlist)
 
-# p + ggplot2::scale_color_manual(values=colpal3)
-
-# p <- plotSpecActivity(simList)
+# plotSpecActivity(simlist)
 # p[[2]]
 
- # p <- plotSubUsage(eval, subs = c("EX_glc_D__40__e__41__", "EX_cellb(e)"))
+# plotSubUsage(simlist, subs = c("EX_glc_D__40__e__41__"))
 
 
