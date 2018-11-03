@@ -47,13 +47,13 @@ arena <- BacArena::addOrg(arena,c_cellobioparum,amount=5)
 
 arena <- BacArena::addDefaultMed(arena, c_acetobutylicum)
 
-arena <- BacArena::addDefaultMed(arena, c_beijerinckii)
+#arena <- BacArena::addDefaultMed(arena, c_beijerinckii)
 
-arena <- BacArena::addDefaultMed(arena, c_tyrobutyricum)
+#arena <- BacArena::addDefaultMed(arena, c_tyrobutyricum)
 
 arena <- BacArena::addDefaultMed(arena, c_butyricum)
 
-arena <- BacArena::addDefaultMed(arena, c_cellobioparum)
+#arena <- BacArena::addDefaultMed(arena, c_cellobioparum)
 
 ### carbs
 #arena <- BacArena::addSubs(arena, smax=0, mediac="EX_glc_D__40__e__41__", unit="mM", add= FALSE)
@@ -184,6 +184,23 @@ arena <- BacArena::addSubs(arena, smax=0, mediac="EX_ddca__40__e__41__", unit="m
 arena <- BacArena::addSubs(arena, smax=0, mediac="EX_tsul__40__e__41__", unit="mM", add= FALSE)
 arena <- BacArena::addSubs(arena, smax=0, mediac="EX_15dap__40__e__41__", unit="mM", add= FALSE)
 
+#arena <- BacArena::addSubs(arena, smax=0, mediac="EX_pi__40__e__41__", unit="mM", add= FALSE)
+arena <- BacArena::addSubs(arena, smax=0, mediac="EX_glu_L__40__e__41__", unit="mM", add= FALSE)
+arena <- BacArena::addSubs(arena, smax=0, mediac="EX_thr_L__40__e__41__", unit="mM", add= FALSE)
+arena <- BacArena::addSubs(arena, smax=0, mediac="EX_adn__40__e__41__", unit="mM", add= FALSE)
+arena <- BacArena::addSubs(arena, smax=0, mediac="EX_ala_D__40__e__41__", unit="mM", add= FALSE)
+arena <- BacArena::addSubs(arena, smax=0, mediac="EX_glyleu__40__e__41__", unit="mM", add= FALSE)
+arena <- BacArena::addSubs(arena, smax=0, mediac="EX_cytd__40__e__41__", unit="mM", add= FALSE)
+arena <- BacArena::addSubs(arena, smax=0, mediac="EX_dad_2__40__e__41__", unit="mM", add= FALSE)
+arena <- BacArena::addSubs(arena, smax=0, mediac="EX_dgsn__40__e__41__", unit="mM", add= FALSE)
+arena <- BacArena::addSubs(arena, smax=0, mediac="EX_gly__40__e__41__", unit="mM", add= FALSE)
+arena <- BacArena::addSubs(arena, smax=0, mediac="EX_cys_L__40__e__41__", unit="mM", add= FALSE)
+arena <- BacArena::addSubs(arena, smax=0, mediac="EX_no3__40__e__41__", unit="mM", add= FALSE)
+arena <- BacArena::addSubs(arena, smax=0, mediac="EX_glyasp__40__e__41__", unit="mM", add= FALSE)
+arena <- BacArena::addSubs(arena, smax=0, mediac="EX_din__40__e__41__", unit="mM", add= FALSE)
+arena <- BacArena::addSubs(arena, smax=0, mediac="EX_val_L__40__e__41__", unit="mM", add= FALSE)
+arena <- BacArena::addSubs(arena, smax=0, mediac="EX_no2__40__e__41__", unit="mM", add= FALSE)
+
 
 # # spermidina FUNDAMENRAL para c_cellobiopaum
 #arena <- BacArena::addSubs(arena, smax=0, mediac="EX_spmd__40__e__41__", unit="mM", add= FALSE)
@@ -197,20 +214,17 @@ sim <- BacArena::simEnv(arena, time=15)
 
 save.image("min_solo_glucosa.Rdata")
 
-# p <- plotGrowthCurve(simlist)
-# p[[2]]
+plotGrowthCurve(simlist)
+plotSubCurve(simlist)
 
-# p <- plotSubCurve(simlist)
-# p[[3]]
 
-# p <- plotSubCurve(simlist, mediac = c("EX_glc_D__40__e__41__", "EX_h2__40__e__41__"))
-# p[[3]]
+plotSubCurve(simlist, mediac = c("EX_glc_D__40__e__41__", "EX_h2__40__e__41__"))
 
-# plotAbundance(simlist)
+plotAbundance(simlist)
 
-# plotSpecActivity(simlist)
-# p[[2]]
+plotSpecActivity(simlist)
 
-# plotSubUsage(simlist, subs = c("EX_glc_D__40__e__41__"))
+
+plotSubUsage(simlist)
 
 
